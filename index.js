@@ -17,7 +17,7 @@ var app = express();
 
 app.get('/principal',(req,res)=>{
     console.log("Entre");
-    res.sendFile(path.join(__dirname,'views','Page.html'))
+    res.sendFile(path.join(__dirname,'views','index.html'))
 })
 
 //No es necesario que tengan tanto el protocolo http y https funcionando al mismo tiempo
