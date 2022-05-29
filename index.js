@@ -15,15 +15,14 @@ var app = express();
 
 // your express configuration here
 
-app.get('/principal',(req,res)=>{
-    console.log("Entre");
-    res.sendFile(path.join(__dirname,'views','index.html'))
+app.get('/', (req,res)=>{
+    res.sendFile(path.join(__dirname,'public','index.html'))
 })
 
 //No es necesario que tengan tanto el protocolo http y https funcionando al mismo tiempo
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(8383,()=>console.log("Corriendo http 8383"));
+//httpServer.listen(8383,()=>console.log("Corriendo http 8383"));
 //comentar el de arriba
-httpsServer.listen(8080,()=>console.log("Corriendo HTTPS 8080"));
+httpsServer.listen(8443,()=>console.log("Corriendo HTTPS 8443"));
